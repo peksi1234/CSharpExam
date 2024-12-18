@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace Task1
             // Get an integer input
             Console.WriteLine("Enter an int: ");
             int userInt = int.Parse(Console.ReadLine());
-            Console.WriteLine("Integer: " + userInt + ".0");
+            Console.WriteLine("Integer: " + userInt);
 
             // Get a double input
             Console.WriteLine("Enter a double: ");
@@ -30,7 +30,7 @@ namespace Task1
             string userString = Console.ReadLine();
             Console.WriteLine("String: " + userString);
 
-            
+            // Brief descriptions of data types
             Console.WriteLine("brief descriptions of data types");
             Console.WriteLine("int: whole numbers, no decimals like 1,2,3");
             Console.WriteLine("double: precise decimals like 1.22123");
