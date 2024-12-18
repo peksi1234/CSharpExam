@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace Task3
 {
@@ -16,7 +12,7 @@ namespace Task3
             // Loop through the names and print with "Hello"
             foreach (var name in names)
             {
-                Console.WriteLine("Hello " + name + ","); 
+                Console.WriteLine("Hello, " + name + "!");
             }
 
             // Second array with numbers
@@ -29,7 +25,7 @@ namespace Task3
             Array.Resize(ref numbers, numbers.Length - 1);
 
             // Print the numbers array
-            Console.WriteLine("Sorted numbers: ");
+            Console.WriteLine("\nSorted numbers after removing the last element:");
             foreach (var num in numbers)
             {
                 // Prints the sorted numbers
