@@ -1,0 +1,110 @@
+using System;
+using System.Collections.Generic;
+
+namespace Task5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Dictionary to store items and their definitions
+            Dictionary<string, string> Items = new Dictionary<string, string>();
+
+            while (true)
+            {
+                // Display menu
+                Console.WriteLine("\n1. Add an item and its definition");
+                Console.WriteLine("2. Remove an item");
+                Console.WriteLine("3. Show all items and their definitions");
+                Console.WriteLine("4. Exit");
+                Console.Write("Choose an option: ");
+                string choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    // Add an item and its definition
+                    Console.Write("Enter item name: ");
+                    string item = Console.ReadLine().Trim();
+
+                    if (string.IsNullOrEmpty(item))
+                    {
+                        Console.WriteLine("Item name cannot be empty.");
+                        continue;
+                    }
+
+                    Console.Write("Enter item description: ");
+                    string description = Console.ReadLine().Trim();
+
+                    if (string.IsNullOrEmpty(description))
+                    {
+                        Console.WriteLine("Item description cannot be empty.");
+                        continue;
+                    }
+
+                    if (Items.ContainsKey(item))
+                    {
+                        Console.WriteLine("This item already exists. Do you want to overwrite it? (yes/no)");
+                        string overwrite = Console.ReadLine().Trim().ToLower();
+
+                        if (overwrite == "yes")
+                        {
+                            Items[item] = description;
+                            Console.WriteLine("Item updated successfully.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Item not updated.");
+                        }
+                    }
+                    else
+                    {
+                        Items[item] = description;
+                        Console.WriteLine("Item added successfully.");
+                    }
+                }
+                else if (choice == "2")
+                {
+                    // Remove an item
+                    Console.Write("Enter the item to remove: ");
+                    string itemToRemove = Console.ReadLine().Trim();
+
+                    if (Items.Remove(itemToRemove))
+                    {
+                        Console.WriteLine("Item removed successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Item not found.");
+                    }
+                }
+                else if (choice == "3")
+                {
+                    // Show all items and their definitions
+                    if (Items.Count == 0)
+                    {
+                        Console.WriteLine("No items to display.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Items and their definitions:");
+                        foreach (var item in Items)
+                        {
+                            Console.WriteLine($"{item.Key}: {item.Value}");
+                        }
+                    }
+                }
+                else if (choice == "4")
+                {
+                    // Exit the program
+                    Console.WriteLine("Exiting program. Goodbye!");
+                    break;
+                }
+                else
+                {
+                    // Invalid input handling
+                    Console.WriteLine("Invalid input. Please choose a valid option.");
+                }
+            }
+        }
+    }
+}
