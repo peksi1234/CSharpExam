@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // First array with names
+            string[] names = { "Alice", "John", "Mia" };
+
+            // Loop through the names and print with "Hello"
+            foreach (var name in names)
+            {
+                Console.WriteLine("Hello " + name + ","); 
+            }
+
+            // Second array with numbers
+            int[] numbers = { 12, 45, 78, 3, 99, 21, 8 };
+
+            // Sort array 
+            Array.Sort(numbers);
+
+            // Remove the last element
+            Array.Resize(ref numbers, numbers.Length - 1);
+
+            // Print the numbers array
+            Console.WriteLine("Sorted numbers: ");
+            foreach (var num in numbers)
+            {
+                // Prints the sorted numbers
+                Console.Write(num + " ");
+            }
+        }
+    }
+}
