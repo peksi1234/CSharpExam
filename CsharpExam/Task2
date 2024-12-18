@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace Task2
 {
@@ -14,7 +10,7 @@ namespace Task2
             Console.WriteLine("Enter a number: ");
             string input = Console.ReadLine();
 
-            // convert input to an int
+            // Convert input to an int
             if (int.TryParse(input, out int number))
             {
                 // Check if the number is positive, negative, or zero
@@ -29,8 +25,6 @@ namespace Task2
             {
                 // Invalid input
                 Console.WriteLine("Invalid input");
-
-                Console.ReadLine();
             }
         }
     }
