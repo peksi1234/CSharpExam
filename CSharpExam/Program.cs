@@ -1,60 +1,40 @@
 ﻿using System;
-using System.Runtime.Remoting.Channels;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace Task3
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        // Ask for two numbers
-        Console.Write("Enter the first number: ");
-        string input1 = Console.ReadLine();
+        static void Main(string[] args)
+        {
+            // First array with names
+            string[] names = { "Alice", "John", "Mia" };
 
-        Console.Write("Enter the second number: ");
-        string input2 = Console.ReadLine();
+            // Loop through the names and print with "Hello"
+            foreach (var name in names)
+            {
+                Console.WriteLine("Hello " + name + ","); 
+            }
 
-        // Perform calculations
-        string sum = Add(input1, input2);
-        string difference = Subtract(input1, input2);
-        string product = Multiply(input1, input2);
-        string quotient = Divide(input1, input2);
+            // Second array with numbers
+            int[] numbers = { 12, 45, 78, 3, 99, 21, 8 };
 
-        // Print results
-        Console.WriteLine($"The sum of the numbers is: {sum}.0");
-        Console.WriteLine($"The difference of the numbers is: {difference}.0");
-        Console.WriteLine($"The product of the numbers is: {product}.0");
-        Console.WriteLine($"The quotient of the numbers is: {quotient}.0");
+            // Sort array 
+            Array.Sort(numbers);
 
-        Console.ReadLine();
-    }
+            // Remove the last element
+            Array.Resize(ref numbers, numbers.Length - 1);
 
-
-    static string Add(string num1, string num2)
-    {
-        int n1 = int.Parse(num1);
-        int n2 = int.Parse(num2);
-        return (n1 + n2).ToString();
-    }
-
-    static string Subtract(string num1, string num2)
-    {
-        int n1 = int.Parse(num1);
-        int n2 = int.Parse(num2);
-        return (n1 - n2).ToString();
-    }
-
-    static string Multiply(string num1, string num2)
-    {
-        int n1 = int.Parse(num1);
-        int n2 = int.Parse(num2);
-        return (n1 * n2).ToString();
-    }
-
-    static string Divide(string num1, string num2)
-    {
-        int n1 = int.Parse(num1);
-        int n2 = int.Parse(num2);
-        if (n2 == 0)
-            return "Cannot divide by zero";
-        return (n1 / n2).ToString();
+            // Print the numbers array
+            Console.WriteLine("Sorted numbers: ");
+            foreach (var num in numbers)
+            {
+                // Prints the sorted numbers
+                Console.Write(num + " ");
+            }
+        }
     }
 }
