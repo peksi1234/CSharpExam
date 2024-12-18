@@ -14,7 +14,7 @@ namespace Task2
             Console.WriteLine("Enter a number: ");
             string input = Console.ReadLine();
 
-            // Try to convert input to an int
+            // convert input to an int
             if (int.TryParse(input, out int number))
             {
                 // Check if the number is positive, negative, or zero
